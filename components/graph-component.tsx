@@ -1,39 +1,35 @@
 "use client";
 
-import { GraphProvider } from "@/hooks";
-import { mockData } from "@/lib/mocks/songs";
-import { useState } from "react";
+import { useGraph } from "@/hooks";
+import dynamic from "next/dynamic";
+
+const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
+  ssr: false,
+});
 
 const GraphComponent = () => {
-  const { relatedNodes, findRelatedNodes } = GraphProvider(mockData);
-  const [selectedNode, setSelectedNode] = useState<string>("");
+  const { path } = useGraph();
 
-  const handleSearch = () => {
-    findRelatedNodes(selectedNode);
+  const graphData = {
+    nodes: path.nodes.map((node) => ({ ...node })),
+    links: path.links.map((link) => ({ ...link })),
   };
 
   return (
-    <div>
-      <h1>Songs</h1>
-      <input
-        type="text"
-        value={selectedNode}
-        onChange={(e) => setSelectedNode(e.target.value)}
-        placeholder="Digite o nome da música"
-      />
-      <br />
-
-      <button onClick={handleSearch}>Buscar Relacionadas</button>
-
-      {relatedNodes.length > 0 ? (
-        <ul>
-          {relatedNodes.map((node) => (
-            <li key={node}>{node}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>Nenhuma música relacionada encontrada.</p>
-      )}
+    <div className="flex w-full justify-center overflow-hidden h-fit">
+      <div className="w-2/3 flex justify-center items-center">
+        <ForceGraph2D
+          graphData={graphData}
+          nodeLabel={(node) => `${node.id} (${node.genre})`}
+          nodeAutoColorBy="genre"
+          linkColor={() => "gray"}
+          height={600}
+          linkDirectionalArrowLength={0}
+          linkDirectionalArrowRelPos={0}
+          enableZoomInteraction={false}
+          enableNodeDrag={false}
+        />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,6 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { GraphProvider } from "@/hooks";
+import { mockData } from "@/lib/mocks/songs";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -24,11 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <GraphProvider graph={mockData}>{children}</GraphProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

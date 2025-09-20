@@ -4,16 +4,24 @@
 **Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
-| Matrícula | Aluno                     |
-| --------- | ------------------------- |
+| Matrícula | Aluno           |
+| --------- | --------------- |
 | 200054333 | Arthur Gabriel Lima Gomes |
 
 ## Sobre 
-Songz é um projeto desenvolvido para a disciplina de Projeto de Algoritmos, com o objetivo de explorar conceitos de teoria dos grafos aplicados para exibir caminhos entre músicas com base nos pesos das conexões. O sistema utiliza grafos para representar relações entre músicas, como conexões baseadas em gêneros musicais e colaborações entre artistas. O usuário insere duas músicas, e o sistema encontra os caminhos entre elas, exibindo-os visualmente como um grafo interativo, destacando as conexões ponderadas.
+Songz é um projeto desenvolvido para a disciplina de Projeto de Algoritmos, com o objetivo de explorar conceitos de teoria dos grafos aplicados a um sistema de recomendação de músicas. Utilizamos grafos para representar relações entre músicas, como conexões baseadas em gêneros musicais e colaborações entre artistas.
+O usuário pode buscar por músicas, e o sistema exibe as músicas relacionadas visualmente como um grafo interativo.
 
 ## Screenshots
 
+### **Tela inicial**:
+![Tela inicial](./assets/songz1.png)
 
+### **Busca por música**:
+![Busca por música](./assets/songz2.png)
+
+### **Tema escuro**:
+![Tema escuro](./assets/songz3.png)
 
 ## Instalação 
 **Linguagem**: Javascript<br>
@@ -29,14 +37,9 @@ Para rodar o projeto, execute o comando abaixo:
 
 O projeto estará disponível em `http://localhost:3000/`.
 
+## Uso
 
-## Uso 
-
-1. Nos campos de buscas, insira os nomes das música.
+1. No campo de busca, insira o nome de uma música ou parte dele.
 2. Clique no botão Buscar.
 3. O grafo exibirá a música pesquisada e suas conexões com outras músicas relacionadas.
 4. Você pode clicar nos nós para destacar conexões ou explorar o grafo utilizando zoom e arrastando os elementos.
-
-## Outros
-
-[Link para apresentação]()
