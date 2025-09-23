@@ -20,8 +20,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SONGZ - PA - 2024.2",
-  description: "Projeto da disciplina de Projeto de Algoritmos - 2024.2",
+  title: "SONGZ - PA - 2025.2",
+  description: "Projeto da disciplina de Projeto de Algoritmos - 2025.2",
 };
 
 export default function RootLayout({

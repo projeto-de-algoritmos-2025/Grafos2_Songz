@@ -46,4 +46,4 @@ O projeto estará disponível em `http://localhost:3000/`.
 
 ## Outros
 
-[Link para apresentação](https://youtu.be/J0KivVF_3kc?si=ACgStD9M8_o1Kyog)
+[Link para apresentação](https://youtu.be/nxw2Clx5XWw)
